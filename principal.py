@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import streamlit as st
 
-dados = pd.read_csv('/content/drive/MyDrive/2022/claudio/cancerMama.csv')
+dados = pd.read_csv('cancerMama.csv')
 nomes_colunas = dados.columns.to_list()
 features = dados[nomes_colunas[:len(nomes_colunas)-1]]
 classes = dados['diagnosis']#0 sem cancer  / 1 = com cancer
