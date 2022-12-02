@@ -13,6 +13,7 @@ features_treino,features_teste,classes_treino,classes_teste = train_test_split(f
 from sklearn.ensemble import RandomForestClassifier
 
 floresta = RandomForestClassifier(max_depth=2, random_state=0)
+floresta.fit(features_treino,classes_treino)
 st.title('Predicao de Cancer de Mama')
 #mean_radius      mean_texture     mean_perimeter   mean_area        mean_smoothness  
 paciente = []
@@ -27,9 +28,10 @@ paciente.append(area)
 maciez = st.number_input('Digite a maciez da lesao:')
 paciente.append(maciez)
 
-resultado = floresta.predict([paciente])
-st.write(resultado)
-if resultado==0:
-  st.write('Paciente sem cancer')
-else:
-  st.write('Paciente com cancer')
+if st.button('Fazer predicao'):
+  resultado = floresta.predict([paciente])
+  st.write(resultado)
+  if resultado==0:
+    st.write('Paciente sem cancer')
+  else:
+    st.write('Paciente com cancer')
