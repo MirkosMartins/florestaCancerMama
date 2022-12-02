@@ -12,7 +12,7 @@ features_treino,features_teste,classes_treino,classes_teste = train_test_split(f
 
 from sklearn.ensemble import RandomForestClassifier
 
-floresta = RandomForestClassifier(n_estimator=1000)
+floresta = RandomForestClassifier(n_estimators=1000)
 st.title('Predicao de Cancer de Mama')
 #mean_radius      mean_texture     mean_perimeter   mean_area        mean_smoothness  
 paciente = []
